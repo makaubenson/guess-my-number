@@ -14,6 +14,7 @@
 - The DOM and The DOM methods & properties are part of `WEB APIs`
 - API stands for Application Programming Interface.
 - The DOM also constitutes `CSS`.
+- Manipulating html styles using `js` requires one to set the value as a string always. e.g `document.querySelector('.number').style.width = '30rem';`
 
 ## Handling Click Events
 
