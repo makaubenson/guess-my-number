@@ -16,6 +16,6 @@
 - The DOM also constitutes `CSS`.
 - Manipulating html styles using `js` requires one to set the value as a string always. e.g `document.querySelector('.number').style.width = '30rem';` that is `'30rem'`
 
-## Handling Click Events
+## Events
 
 - An `event` is something that happens on the page.
