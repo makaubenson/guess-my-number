@@ -11,7 +11,9 @@ document.querySelector('.guess').value = 23; //setting value of html input
 console.log(document.querySelector('.guess').value); //getting value of the input
 */
 // Handling Click Events
-
+//Generating a random secret number between 0 and 20
+const number = Math.random() * 20;
+console.log(`Random number is ${number}`);
 document.querySelector('.check').addEventListener('click', function () {
   //   console.log(document.querySelector('.guess').value);
   const guess = Number(document.querySelector('.guess').value);
