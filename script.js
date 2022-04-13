@@ -36,22 +36,39 @@ document.querySelector('.check').addEventListener('click', function () {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
-  } else if (guess > secretNumber) {
-    //when guess is too high
+
+    //    else if (guess > secretNumber) {
+    //     //when guess is too high
+    //     if (score > 1) {
+    //       document.querySelector('.message').textContent = '📈 Too High';
+    //       // score = score - 1;
+    //       score--;
+    //       document.querySelector('.score').textContent = score;
+    //     } else {
+    //       //guess is > secreteNumber but not > than 0
+    //       document.querySelector('.message').textContent = '💥 You lost the game';
+    //       document.querySelector('.score').textContent = 0;
+    //     }
+    //   } else if (guess < secretNumber) {
+    //     //when guess is too low
+    //     if (score > 1) {
+    //       document.querySelector('.message').textContent = '📉 Too Low';
+    //       // score = score - 1;
+    //       score--;
+    //       document.querySelector('.score').textContent = score;
+    //     } else {
+    //       //guess is > secreteNumber but not > than 0
+    //       document.querySelector('.message').textContent = '💥 You lost the game';
+    //       document.querySelector('.score').textContent = 0;
+    //     }
+    //   }
+
+    // REFACTORING CODE TO ADHERE TO DRY PRINCIPLE
+    //when guess is wrong
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Too High';
-      // score = score - 1;
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      //guess is > secreteNumber but not > than 0
-      document.querySelector('.message').textContent = '💥 You lost the game';
-      document.querySelector('.score').textContent = 0;
-    }
-  } else if (guess < secretNumber) {
-    //when guess is too low
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Too Low';
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? '📈 Too High' : '📉 Too Low';
       // score = score - 1;
       score--;
       document.querySelector('.score').textContent = score;
