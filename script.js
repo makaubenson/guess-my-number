@@ -12,6 +12,7 @@ console.log(document.querySelector('.guess').value); //getting value of the inpu
 */
 // Handling Click Events
 //Generating a random secret number between 0 and 20
+let highScore = 0;
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 console.log(secretNumber);
@@ -31,6 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
 
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
   } else if (guess > secretNumber) {
     //when guess is too high
     if (score > 1) {
