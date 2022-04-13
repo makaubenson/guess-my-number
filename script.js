@@ -12,7 +12,7 @@ console.log(document.querySelector('.guess').value); //getting value of the inpu
 */
 // Handling Click Events
 //Generating a random secret number between 0 and 20
-const number = Math.random() * 20;
+const number = Math.trunc(Math.random() * 20) + 1;
 console.log(`Random number is ${number}`);
 document.querySelector('.check').addEventListener('click', function () {
   //   console.log(document.querySelector('.guess').value);
