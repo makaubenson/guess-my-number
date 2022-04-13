@@ -13,6 +13,7 @@ console.log(document.querySelector('.guess').value); //getting value of the inpu
 // Handling Click Events
 //Generating a random secret number between 0 and 20
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
 document.querySelector('.number').textContent = secretNumber;
 console.log(`Secret Number is ${secretNumber}`);
 
@@ -27,7 +28,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '🎉 Correct Number';
   } else if (guess > secretNumber) {
     document.querySelector('.message').textContent = '📈 Too High';
+    // score = score - 1;
+    score--;
+    document.querySelector('.score').textContent = score;
   } else if (guess < secretNumber) {
     document.querySelector('.message').textContent = '📉 Too Low';
+    // score = score - 1;
+    score--;
+    document.querySelector('.score').textContent = score;
   }
 });
