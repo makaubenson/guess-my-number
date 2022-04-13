@@ -14,4 +14,6 @@
 - The DOM and The DOM methods & properties are part of `WEB APIs`
 - API stands for Application Programming Interface.
 
-## Guess My Number
+## Handling Click Events
+
+- An `event` is something that happens on the page.
