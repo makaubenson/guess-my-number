@@ -15,7 +15,7 @@ console.log(document.querySelector('.guess').value); //getting value of the inpu
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 document.querySelector('.number').textContent = secretNumber;
-console.log(`Secret Number is ${secretNumber}`);
+//console.log(`Secret Number is ${secretNumber}`);
 
 document.querySelector('.check').addEventListener('click', function () {
   //listening for a click event and executing a function
@@ -27,14 +27,26 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number';
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = '📈 Too High';
-    // score = score - 1;
-    score--;
-    document.querySelector('.score').textContent = score;
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📈 Too High';
+      // score = score - 1;
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      //guess is > secreteNumber but not > than 0
+      document.querySelector('.message').textContent = '💥 You lost the game';
+      document.querySelector('.score').textContent = 0;
+    }
   } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent = '📉 Too Low';
-    // score = score - 1;
-    score--;
-    document.querySelector('.score').textContent = score;
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📉 Too Low';
+      // score = score - 1;
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      //guess is > secreteNumber but not > than 0
+      document.querySelector('.message').textContent = '💥 You lost the game';
+      document.querySelector('.score').textContent = 0;
+    }
   }
 });
