@@ -15,5 +15,8 @@ console.log(document.querySelector('.guess').value); //getting value of the inpu
 document.querySelector('.check').addEventListener('click', function () {
   //   console.log(document.querySelector('.guess').value);
   const guess = Number(document.querySelector('.guess').value);
-  console.log(typeof guess);
+  console.log(guess, typeof guess);
+  if (!guess) {
+    document.querySelector('.message').textContent = '⛔ No Number';
+  }
 });
