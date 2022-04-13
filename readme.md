@@ -13,6 +13,7 @@
 - DOM !== JAVASCRIPT
 - The DOM and The DOM methods & properties are part of `WEB APIs`
 - API stands for Application Programming Interface.
+- The DOM also constitutes `CSS`.
 
 ## Handling Click Events
 
