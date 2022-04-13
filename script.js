@@ -17,6 +17,7 @@ document.querySelector('.number').textContent = secretNumber;
 console.log(`Secret Number is ${secretNumber}`);
 
 document.querySelector('.check').addEventListener('click', function () {
+  //listening for a click event and executing a function
   //   console.log(document.querySelector('.guess').value);
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -24,5 +25,9 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '⛔ No Number';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number';
+  } else if (guess > secretNumber) {
+    document.querySelector('.message').textContent = '📈 Too High';
+  } else if (guess < secretNumber) {
+    document.querySelector('.message').textContent = '📉 Too Low';
   }
 });
